@@ -1,20 +1,17 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { BaseEntity } from '../../common/base.entity';
 
 @Entity()
-export class Product {
-  // generate tables
-  @PrimaryGeneratedColumn('uuid')
-  public id: string;
+export class Product extends BaseEntity {
+  @Column({ unique: true })
+  name: string;
 
   @Column()
-  public name: string;
+  description: string;
 
   @Column()
-  public description: string;
+  price: number;
 
   @Column()
-  public price: number;
-
-  @Column()
-  public imageUrl: string;
+  productImg: string;
 }
