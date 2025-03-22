@@ -6,6 +6,8 @@ import { DatabaseModule } from './database/database.module';
 import { ProductModule } from './product/product.module';
 import { CommentsModule } from './comments/comments.module';
 import * as Joi from '@hapi/joi';
+import { TerminusModule } from '@nestjs/terminus';
+import { DocumentBuilder } from '@nestjs/swagger';
 
 @Module({
   imports: [
@@ -21,6 +23,7 @@ import * as Joi from '@hapi/joi';
     DatabaseModule,
     ProductModule,
     CommentsModule,
+    TerminusModule,
   ],
   controllers: [AppController],
   providers: [AppService],
